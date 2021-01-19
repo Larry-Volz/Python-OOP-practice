@@ -13,23 +13,31 @@ class WordFinder:
             print(f"{self.num_of_words} words read")
             
     def random(self):
+        self.read_word_file()
+
+        self.filtered_word_list = [word.strip() for word in self.word_list if word.strip() and not word.startswith("#")]
         """ finds a random word from a dictionary """
         from random import choice
         self.word = choice(self.word_list)
-        return self.word 
+        return self.word
+
 
 # word = WordFinder()
 # word.read_word_file()
 # print(word.random())
 
 class SpecialWordFinder(WordFinder):
-    def __init__(self):
-        # self.some_variable = 0
-        super().__init__(self, word_list, file)
+    def __init__(self):  #instantiates this sub-class
+        super().__init__()  #starts up the super-class so I can use it's props/methods.  
+        self.read_word_file
+        # super().__init__(self, word_list, file)
         # print(super().word)
+    
+        # for word in self.word_list:
+        #     print(word)
 
 
 newWord = SpecialWordFinder()
-newWord.read_word_file()
+# newWord.read_word_file()
 print (newWord.random())
 
