@@ -6,7 +6,7 @@ class WordFinder:
         self.word_list = []
         
     def read_word_file(self):
-        with open("words.txt") as self.file:
+        with open("python-oo-practice\words.txt") as self.file:
             for line in self.file:
                 self.word_list.append(line.strip())
             self.num_of_words = len(self.word_list)
@@ -18,18 +18,18 @@ class WordFinder:
         self.word = choice(self.word_list)
         return self.word 
 
-word = WordFinder()
-word.read_word_file()
-print(word.random())
+# word = WordFinder()
+# word.read_word_file()
+# print(word.random())
 
-# class SpecialWordFinder(WordFinder):
-#     def __init__(self):
-#         self.some_variable = 0
-#         super().__init__(self, word_list)
-#         # print(super().word)
+class SpecialWordFinder(WordFinder):
+    def __init__(self):
+        # self.some_variable = 0
+        super().__init__(self, word_list, file)
+        # print(super().word)
 
 
-# newWord = SpecialWordFinder()
-# newWord.read_word_file()
-# print (newWord.random())
+newWord = SpecialWordFinder()
+newWord.read_word_file()
+print (newWord.random())
 
